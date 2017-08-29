@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,13 +10,14 @@
 <div class="container">
 
     {{ Auth::check() ? "Logged In" : "Logged Out" }}
-
+    @include('partials._messages')
 
     @yield('content')
 
     @include('partials._footer')
 
 </div> <!-- end of .container -->
+@include('partials._javascript')
 
 @yield('scripts')
 

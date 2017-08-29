@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('pages.welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+// memos
+Route::resource('memos', 'MemoController', ['except' => ['create']]);
