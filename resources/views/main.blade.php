@@ -3,23 +3,24 @@
 
 @include('partials._header')
 
-<body>
+    <body>
 
-@include('partials._nav')
+        @include('partials._nav')
 
-<div class="container">
+            <div class="container">
 
-    {{ Auth::check() ? "Logged In" : "Logged Out" }}
-    @include('partials._messages')
+                {{--{{ Auth::check() ? "Logged In" : "Logged Out" }}--}}
+                @include('partials._messages')
 
-    @yield('content')
+                @yield('content')
 
-    @include('partials._footer')
+                @include('partials._footer')
 
-</div> <!-- end of .container -->
-@include('partials._javascript')
+            </div> <!-- end of .container -->
 
-@yield('scripts')
+        @include('partials._javascript')
 
-</body>
+        @yield('scripts')
+
+    </body>
 </html>
