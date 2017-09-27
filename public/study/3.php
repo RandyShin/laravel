@@ -6,9 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css"  href="http://localhost/study/style.css">
+    <link rel="stylesheet" type="text/css"  href="http://laravel.ziotes.com/study/style.css">
 </head>
-<body>
+<body id="target">
 <header>
     <h1><a href="/study">JavaScript</a></h1>
 </header>
@@ -20,7 +20,10 @@
         <li><a href="3.php">연산자</a></li>
     </ol>
 </nav>
-
+<div id="control">
+    <input type="button" value="white" onclick="document.getElementById('target').className='white'">
+    <input type="button" value="black" onclick="document.getElementById('target').className='black'">
+</div>
 <article>
     <h2>연산자</h2>
     <p>연산자 설명 입니다.</p>

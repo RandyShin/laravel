@@ -1,3 +1,11 @@
+body.black{
+    background: black;
+    color: white;
+}
+body.white{
+    background: white;
+    color: black;
+}
 header {
     padding: 20px;
     border-bottom: 1px solid gray;
@@ -17,4 +25,7 @@ article {
 }
 h2 {
     color:red;
+}
+#control{
+    float: right;
 }

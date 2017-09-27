@@ -7,23 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" type="text/css"  href="http://localhost/study/style.css">
+    <link rel="stylesheet" type="text/css"  href="http://laravel.ziotes.com/study/style.css">
 
 </head>
-<body>
+<body id="target">
     <header>
         <h1><a href="/study">JavaScript</a></h1>
     </header>
 
     <nav>
         <ol>
-            <li><a href="1.php">JavaScript란</a></li>
-            <li><a href="2.php">변수와상수</a></li>
-            <li><a href="3.php">연산자</a></li>
+            <?php
+            echo file_get_contents('list.txt');
+            ?>
         </ol>
     </nav>
 
+    <div id="control">
+        <input type="button" value="white" onclick="document.getElementById('target').className='white'">
+        <input type="button" value="black" onclick="document.getElementById('target').className='black'">
+    </div>
 
+    <article>
+ <p>hahahaha</p>
+
+    </article>
 
 </body>
 </html>
