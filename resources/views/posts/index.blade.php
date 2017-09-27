@@ -54,9 +54,9 @@
 				</thead>
 
 				<tbody>
-					
+
 					@forelse ($posts as $post)
-						
+
 						<tr>
 							<th>{{ $post->id }}</th>
 							<td>{{ $post->title }}</td>

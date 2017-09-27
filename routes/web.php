@@ -22,6 +22,8 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// KB
+Route::resource('kb', 'KBController');
 
 // blog
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
@@ -48,3 +50,10 @@ Route::resource('tags', 'TagController', ['except' => ['create']]);
 
 // memos
 Route::resource('memos', 'MemoController', ['except' => ['create']]);
+
+//study
+Route::get('test','TestsController@getIndex');
+
+//DB::listen(function ($query){
+//    var_dump($query->sql);
+//});

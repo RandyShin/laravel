@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class ExampleTest extends TestCase
 {
     /**
-     * A basic test example.
+     * A basic study example.
      *
      * @return void
      */
