@@ -1,7 +1,6 @@
 <?php
-    $conn=mysqli_connect('localhost','root','','blog');
+    $conn=mysqli_connect('localhost','root','ziotes135','blog');
     $result=mysqli_query($conn,'SELECT * FROM posts');
-
 
 ?>
 
@@ -25,7 +24,7 @@
         <ol>
             <?php
             while($row=mysqli_fetch_assoc($result)) {
-                echo '<li><a href="http://localhost/study/index.php?id='.$row['id'].'">'.$row['title'].'</a>,</li>'."\n";
+                echo '<li><a href="/study/index.php?id='.$row['id'].'">'.$row['title'].'</a>,</li>'."\n";
             }
             ?>
         </ol>
@@ -34,14 +33,11 @@
     <div id="control">
         <input type="button" value="white" onclick="document.getElementById('target').className='white'">
         <input type="button" value="black" onclick="document.getElementById('target').className='black'">
+        <a href="/study/write.php">쓰기</a>
     </div>
 
     <article>
-        <form action="http://localhost/study/5.php", method="POST">
-            <p>Title: <input type="text" name="title"></p>
-            <p>Body: <textarea name="body"cols="30" rows="5"></textarea></p>
-            <input type="submit", value="send">
-        </form>
+
         <?php
         if(isset($_GET['id'])){
             $sql='SELECT * FROM posts where id='.$_GET['id'];
