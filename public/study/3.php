@@ -15,9 +15,9 @@
 
 <nav>
     <ol>
-        <li><a href="1.php">JavaScript란</a></li>
-        <li><a href="2.php">변수와상수</a></li>
-        <li><a href="3.php">연산자</a></li>
+        <?php
+        echo file_get_contents('list.txt');
+        ?>
     </ol>
 </nav>
 <div id="control">
@@ -25,8 +25,7 @@
     <input type="button" value="black" onclick="document.getElementById('target').className='black'">
 </div>
 <article>
-    <h2>연산자</h2>
-    <p>연산자 설명 입니다.</p>
+
 </article>
 
 

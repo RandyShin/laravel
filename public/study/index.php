@@ -1,3 +1,10 @@
+<?php
+    $conn=mysqli_connect('localhost','root','','blog');
+    $result=mysqli_query($conn,'SELECT * FROM posts');
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,13 +19,14 @@
 </head>
 <body id="target">
     <header>
-        <h1><a href="/study">JavaScript</a></h1>
+        <h1><a href="/study/index.php">JavaScript</a></h1>
     </header>
-
     <nav>
         <ol>
             <?php
-            echo file_get_contents('list.txt');
+            while($row=mysqli_fetch_assoc($result)) {
+                echo '<li><a href="http://localhost/study/index.php?id='.$row['id'].'">'.$row['title'].'</a>,</li>'."\n";
+            }
             ?>
         </ol>
     </nav>
@@ -29,7 +37,20 @@
     </div>
 
     <article>
- <p>hahahaha</p>
+        <form action="http://localhost/study/5.php", method="POST">
+            <p>Title: <input type="text" name="title"></p>
+            <p>Body: <textarea name="body"cols="30" rows="5"></textarea></p>
+            <input type="submit", value="send">
+        </form>
+        <?php
+        if(isset($_GET['id'])){
+            $sql='SELECT * FROM posts where id='.$_GET['id'];
+            $result=mysqli_query($conn,$sql);
+            $row=mysqli_fetch_assoc($result);
+
+            echo $row['body'];
+        }
+        ?>
 
     </article>
 
